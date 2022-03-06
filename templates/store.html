@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ecommerce Projects</title>
+</head>
+<body>
+    {% if products %}
+        <h1>{% with products|first as product %} {{ product.store_id }} {% endwith %}</h1>
+        <ul>
+            {% for product in products %}
+                <li>
+                    <a href="{% url 'product' product_id=product.id %}">{{ product.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h1>No products found</h1>
+    {% endif %}
+</body>
+</html>

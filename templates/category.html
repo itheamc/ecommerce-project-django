@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ecommerce Project</title>
+</head>
+<body>
+    {% if category %}
+        <h1>{{ category.name}}</h1>
+    {% else %}
+        <p>No category found</p>
+    {% endif %}
+</body>
+</html>

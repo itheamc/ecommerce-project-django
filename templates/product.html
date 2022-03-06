@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ecommerce Projects</title>
+</head>
+<body>
+    {% if product %}
+        <h1>{{ product.name }}</h1>
+        <p><strong>Price:</strong> {{ product.price }}</p>
+        <p><strong>MRP:</strong> {{ product.mrp }}</p>
+        <p><strong>Category:</strong> <a href="{% url 'category' category_id=product.category.id %}">{{ product.category.name }}</a></p>
+        <p><strong>Store:</strong> <a href="{% url 'store' store_id=product.store.id %}">{{ product.store.name }}</a></p>
+        <p><strong>Added On:</strong> {{ product.added_on }}</p>
+        <p><strong>Updated On:</strong> {{ product.updated_on }}</p>
+
+    {% else %}
+        <h1>No products found</h1>
+    {% endif %}
+</body>
+</html>

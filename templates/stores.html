@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Store | Ecommerce Projects</title>
+</head>
+<body>
+    {% if stores %}
+        <h1>Stores</h1>
+        <ul>
+            {% for store in stores %}
+                <li>
+                    <a href="{% url 'store' store_id=store.id %}">{{ store.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h1>No stores found</h1>
+    {% endif %}
+</body>
+</html>
