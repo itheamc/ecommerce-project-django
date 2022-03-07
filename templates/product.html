@@ -1,7 +1,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ecommerce Projects</title>
+    <title>{% if product %}
+        {{ product.name }}
+    {% endif %} | Ecommerce Projects</title>
 </head>
 <body>
     {% if product %}

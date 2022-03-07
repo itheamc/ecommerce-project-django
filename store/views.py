@@ -10,15 +10,13 @@ from .models import *
 
 def stores(request):
     data = Store.objects.all()
-    stores_list = list(data.values())
-    return render(request, 'stores.html', {'stores': stores_list})
+    return render(request, 'stores.html', {'stores': data})
 
 
 def store(request, store_id):
     try:
         data = Product.objects.filter(store__id=store_id)
-        products_list = list(data.values())
-        return render(request, 'store.html', {'products': products_list})
+        return render(request, 'store.html', {'products': data})
     except Exception as e:
         return JsonResponse({'error': str(e)})
 

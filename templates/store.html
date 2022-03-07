@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ecommerce Projects</title>
+    <title>{% if products %}
+        {{ products.0.store.name }}
+    {% endif %} | Ecommerce Projects</title>
 </head>
 <body>
     {% if products %}
-        <h1>{% with products|first as product %} {{ product.store_id }} {% endwith %}</h1>
+        <h1>{% with products|first as product %} {{ product.store.name }} {% endwith %}</h1>
         <ul>
             {% for product in products %}
                 <li>

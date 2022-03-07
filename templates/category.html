@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ecommerce Project</title>
+    <title>{% if category %}
+        {{ category.name }}
+    {% endif %} | Ecommerce Project</title>
 </head>
 <body>
     {% if category %}
